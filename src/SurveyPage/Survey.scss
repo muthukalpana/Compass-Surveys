@@ -1,0 +1,91 @@
+body
+{
+  margin: 5mm 10mm 0 10mm;
+}
+
+@mixin set-button( $width, $height: 40px , $radius: 8px , $border: 1px solid black ) {
+    height: $height;
+    border-radius: $radius;
+    border: $border;
+    width: $width;
+  }
+
+.btnSurvey{
+    @include set-button(100%);
+}
+
+.btnBack{
+    height: 40px;
+    float: right;
+    margin: 10px 0 ;
+    @include set-button(100px);
+}
+
+button:hover,
+button:focus {
+    background: #0053ba;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+@mixin set-div( $padding, $border: 1px solid black) {
+    border: $border;
+    padding: $padding;
+  }
+
+.divOuter{
+    width:90%;
+    height: 100%;
+    @include set-div(0 0 50px 0);
+}
+
+.divPage{
+    width:75%;
+    height: 100%;
+    margin:0 auto;
+    @include set-div(0px 100px);
+}
+
+.divQuesOpt{
+    margin:10px 0 auto;
+    border-radius: 8px;
+    @include set-div(0px 10px);
+}
+
+.divQuestion{
+    padding-bottom: 50px;
+}
+
+@mixin set-lbl($size: small) {
+    font-size: $size;
+  }
+
+.lblQuestion{
+    @include set-lbl();
+}
+
+.lblNoQuestion{
+    @include set-lbl();
+    text-align: center;
+}
+
+.lblSurvey{
+    display: block;
+    padding: 10px 0px;
+}
+
+h3{
+    margin: 25px;
+}
+
+hr{
+    border-top: 1px solid black;
+    width:100%;
+}
